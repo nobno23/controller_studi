@@ -7,15 +7,16 @@ use Illuminate\Support\Facades\Schema;
 class CreateProductsTable extends Migration
 {
     public function up()
-    {
-        Schema::create('products', function (Blueprint $table) {
-            $table->id(); // kolom id
-            $table->string('name'); // kolom name bertipe string
-            $table->integer('price'); // kolom price bertipe integer
-            $table->text('description'); // kolom description bertipe text
-            $table->timestamps(); // kolom created_at dan updated_at
-        });
-    }
+{
+    Schema::create('products', function (Blueprint $table) {
+        $table->id();
+        $table->string('name');
+        $table->text('description')->nullable();
+        $table->decimal('price', 8, 2);
+        $table->integer('stock');
+        $table->timestamps();
+    });
+}
 
     public function down()
     {

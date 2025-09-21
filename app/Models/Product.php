@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    /** @use HasFactory<\Database\Factories\ProductFactory> */
     use HasFactory;
+
+    // Field yang boleh diisi massal
+    protected $fillable = ['name', 'description', 'price', 'stock'];
 }

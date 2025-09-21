@@ -1,7 +1,3 @@
-<?php
+use App\Http\Controllers\ProductController;
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PageController;
-
-Route::get('/', [PageController::class, 'home']);
-Route::get('/about', [PageController::class, 'about']);
+Route::resource('products', ProductController::class);
